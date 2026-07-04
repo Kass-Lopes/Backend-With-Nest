@@ -1,8 +1,9 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { CreateUserUseCase } from 'src/modules/user/use-cases/create-user-usecase/create-user-usecase';
 import type { IcreateUserBodyDto } from './dtos/create-user-body-dto';
+import { UserViewModel } from './modelView/user-model-view';
 
-@Controller('users')
+@Controller('create')
 export class UserController {
   constructor(private readonly createUserCase: CreateUserUseCase) {}
 
@@ -15,6 +16,6 @@ export class UserController {
       password,
     });
 
-    return user;
+    return UserViewModel.toUserViewHttp(user);
   }
 }
