@@ -20,6 +20,7 @@ export class CreateUserUseCase {
       password: await hash(password, 10),
     });
     await this.userRepository.create(user);
+
     return user;
   }
 }
