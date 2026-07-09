@@ -7,6 +7,7 @@ interface UserProps {
 export class User {
   private props: UserProps;
   private _id: string;
+
   constructor(props: UserProps, id?: string) {
     this.props = {
       ...props,
