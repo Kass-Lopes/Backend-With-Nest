@@ -3,6 +3,7 @@ import {
   IsNotEmpty,
   IsString,
   IsStrongPassword,
+  MinLength,
 } from 'class-validator';
 
 export class IcreateUserBodyDto {
@@ -16,5 +17,6 @@ export class IcreateUserBodyDto {
 
   @IsString()
   @IsStrongPassword()
+  @MinLength(6)
   password!: string;
 }
