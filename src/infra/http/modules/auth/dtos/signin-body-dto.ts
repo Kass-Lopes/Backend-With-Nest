@@ -17,5 +17,4 @@ export class SigninBodyDTO {
   @IsStrongPassword()
   @MinLength(6)
   password!: string;
-  user: any;
 }
